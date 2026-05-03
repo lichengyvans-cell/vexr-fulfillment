@@ -60,7 +60,7 @@ async function shopify(method, endpoint, body) {
   const res = await fetch(`https://${SHOPIFY_STORE}/admin/api/2024-10${endpoint}`, {
     method,
     headers: {
-      'Authorization': `Bearer ${SHOPIFY_TOKEN}`,
+      'X-Shopify-Access-Token': SHOPIFY_TOKEN,
       'Content-Type':  'application/json',
     },
     body: body ? JSON.stringify(body) : undefined,
